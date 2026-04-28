@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlappyBird - Fly Through Pipes</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #87CEEB;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 60px 20px 40px;
+        }
+        .hero h1 {
+            font-size: 48px;
+            color: #fff;
+            text-shadow: 2px 2px 0 #FF8C00;
+            margin-bottom: 8px;
+        }
+        .hero .subtitle {
+            font-size: 20px;
+            color: #fff;
+            text-shadow: 1px 1px 0 #888;
+            margin-bottom: 30px;
+        }
+        .hero .tagline {
+            font-size: 18px;
+            color: #fff;
+            text-shadow: 1px 1px 0 #555;
+            max-width: 500px;
+            margin: 0 auto 30px;
+        }
+
+        /* Screenshots */
+        .screenshots {
+            display: flex;
+            gap: 16px;
+            overflow-x: auto;
+            padding: 40px 0;
+            scroll-snap-type: x mandatory;
+        }
+        .screenshots img {
+            flex: 0 0 200px;
+            height: 434px;
+            object-fit: cover;
+            border-radius: 16px;
+            scroll-snap-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Features */
+        .features {
+            padding: 40px 0;
+        }
+        .features h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: #fff;
+            text-shadow: 1px 1px 0 #555;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+        }
+        .feature-card {
+            background: rgba(255,255,255,0.9);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+        }
+        .feature-card .icon { font-size: 36px; margin-bottom: 12px; }
+        .feature-card h3 { font-size: 18px; margin-bottom: 8px; color: #333; }
+        .feature-card p { font-size: 14px; color: #666; }
+
+        /* How to play */
+        .how-to-play {
+            padding: 40px 0;
+        }
+        .how-to-play h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: #fff;
+            text-shadow: 1px 1px 0 #555;
+        }
+        .steps {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        .step-num {
+            flex: 0 0 36px;
+            height: 36px;
+            background: #4CAF50;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+        }
+        .step p { font-size: 16px; color: #fff; text-shadow: 1px 1px 0 #555; padding-top: 6px; }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #fff;
+            font-size: 14px;
+            text-shadow: 1px 1px 0 #555;
+            border-top: 1px solid rgba(255,255,255,0.3);
+        }
+        .footer a { color: #fff; text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>FLAPPYBIRD</h1>
+        <p class="subtitle">Fly Through Pipes</p>
+        <p class="tagline">The classic arcade game is back! Tap to fly, dodge the pipes, and chase the highest score across 50 challenging levels.</p>
+    </section>
+
+    <!-- Screenshots -->
+    <section class="screenshots">
+        <img src="screenshots_65/01_menu.png" alt="Main Menu">
+        <img src="screenshots_65/02_levels.png" alt="Level Select">
+        <img src="screenshots_65/03_gameplay.png" alt="Gameplay">
+        <img src="screenshots_65/04_gameover.png" alt="Game Over">
+        <img src="screenshots_65/05_victory.png" alt="Level Clear">
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <h2>Features</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="icon">&#x1F426;</div>
+                <h3>50 Levels</h3>
+                <p>Progress through carefully designed levels with increasing difficulty.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">&#x1F3AE;</div>
+                <h3>Retro Pixel Art</h3>
+                <p>Classic pixel-art style graphics that bring back the nostalgia.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">&#x2B50;</div>
+                <h3>Star Ratings</h3>
+                <p>Earn up to 3 stars per level by achieving high scores.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">&#x1F3AF;</div>
+                <h3>High Scores</h3>
+                <p>Track your best scores and challenge yourself to beat them.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">&#x1F4F1;</div>
+                <h3>One-Tap Controls</h3>
+                <p>Simple tap-to-fly mechanics — easy to learn, hard to master.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">&#x1F512;</div>
+                <h3>No Ads, No IAP</h3>
+                <p>Pure gaming experience with no interruptions or hidden costs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Play -->
+    <section class="how-to-play">
+        <h2>How to Play</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-num">1</div>
+                <p>Tap the screen to flap your wings and fly upward.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <p>Release to glide downward — timing is everything!</p>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <p>Navigate through the gaps between green pipes to score points.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">4</div>
+                <p>Complete each level to unlock the next and earn stars.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Company. All rights reserved.</p>
+        <p><a href="privacy.html">Privacy Policy</a></p>
+    </footer>
+
+</div>
+
+</body>
+</html>
